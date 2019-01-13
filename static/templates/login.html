@@ -1,0 +1,36 @@
+<div ng-controller="app.core.nav">
+    <div ng-class="(item.mode == viewMode) ? 'active' : ''">
+    <a href="{{ item.url }}">{{ item.text }}</a>
+</div>
+</div>
+
+<section class='content'>
+    <section id='sign-in-container'>
+    <div class='sign-in'>
+    <form novalidate="novalidate" class="formtastic user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="POST">
+        <input type="hidden" name="authenticity_token" value="" />
+        <fieldset class="inputs">
+            <ol>
+                <li class="string input required stringish" id="user_username_input">
+                    <label for="user_username">Username
+                        <abbr title="required"></abbr>
+                    </label>
+                    <input maxlength="255" id="user_username" type="text" name="user[username]" />
+                </li>
+                <li class="password input optional stringish" id="user_password_input">
+                    <label for="user_password">Password</label>
+                    <input id="user_password" type="password" name="user[password]" />
+                </li>
+            </ol>
+        </fieldset>
+        <fieldset class="actions">
+            <ol>
+                <li class="action input_action " id="user_submit_action">
+                    <input type="submit" name="commit" value="Sign in" data-disable-with="Sign in" />
+                </li>
+            </ol>
+        </fieldset>
+    </form>
+    </div>
+    </section>
+</section>

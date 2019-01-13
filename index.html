@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ono</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap-material-design/dist/css/ripples.min.css">
+    <link rel="stylesheet" href="/bower_components/angular-tooltips/dist/angular-tooltips.min.css">
+    <link rel="stylesheet" href="/bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css">
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <link rel="stylesheet" href="/main.css">
+    <script src="/esapi/esapi.js"></script>
+    <script src="/esapi/resources/i18n/ESAPI_Standard_en_US.properties.js"></script>
+    <script src="/esapi/resources/Base.esapi.properties.js"></script>
+    <script>
+        org.owasp.esapi.ESAPI.initialize();
+    </script>
+</head>
+<body>
+
+    <div class="navbar navbar-primary">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-primary-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="javascript:void(0)">Ono</a>
+      </div>
+      <div class="navbar-collapse collapse navbar-primary-collapse">
+        <ul class="nav navbar-nav" ng-controller="app.core.nav">
+          <li ng-repeat="item in menuItems" class="{{ item.class }}" ng-if="!item.dropdown" ng-class="(item.mode == viewMode) ? 'active' : ''">
+              <a href="{{ item.url }}" id="{{ item.id }}">{{ item.text }}</a>
+          </li>
+          <li ng-repeat="item in menuItems" class="dropdown {{ item.class }}" ng-if="item.dropdown" ng-class="(item.mode == viewMode) ? 'active' : ''">
+            <a href="Javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">{{ item.text }}<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li ng-repeat="item in item.dropdown" class="{{ item.class }}">
+                <a href="{{ item.url }}">{{ item.text }} </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-body" ng-view></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row" ng-controller="app.core.version">
+            <div class="col-md-6 text-right">Version {{ version }}</div>
+        </div>
+    </div>
+    
+
+    <script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-resource/angular-resource.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-click-outside/clickoutside.directive.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
+    <script type="text/javascript" src="/bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
+    <script type="text/javascript" src="/bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="/bower_components/angular-tooltips/dist/angular-tooltips.min.js"></script>
+    <script type="text/javascript" src="/app.js"></script>
+</body>
+</html>

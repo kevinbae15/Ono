@@ -1,0 +1,33 @@
+{
+  "name": "Ono",
+  "version": "1.0.0",
+  "description": "Web application that will give the ability to automatically trace users",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Bae",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "mariadb": "^2.0.2-rc",
+    "node-esapi": "0.0.1",
+    "path": "^0.12.7",
+    "querystring": "^0.2.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "soap": "^0.25.0",
+    "soap-ntlm-2": "^0.9.4",
+    "strong-soap": "^1.14.0",
+    "validator": "^10.9.0",
+    "wait.for-es6": "^0.1.0",
+    "wssecurity": "^0.2.4"
+  }
+}

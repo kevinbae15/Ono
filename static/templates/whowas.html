@@ -1,0 +1,71 @@
+
+<section class='content'>
+    <section id='whowas-search'>
+        <h2 class='flex-title'>Search WhoWas</h2>
+        <div class='whowas-search-form'>
+            <form class="formtastic whowas_search" 
+                  id="new_whowas_search" 
+                  accept-charset="UTF-8" 
+                  data-remote="true"
+                  action="javascript:SubForm_Whowas(event)">
+                <input name="utf8" 
+                       type="hidden" 
+                       value="&#x2713;" />
+                    <fieldset class="inputs">
+                        <label for="whowas_search_ip" 
+                               class="label">
+                               IP Address</label>
+                        <input id="whowas_search_ip" 
+                               type="text" 
+                               name="whowas_search[ip]" 
+                               required/>
+                        <p class="inline-hints">Only accepts IPv4 addresses</p>
+
+                        <label for="whowas_search_port" 
+                               class="label">
+                               Port</label>
+                        <input id="whowas_search_port" 
+                               type="number" 
+                               name="whowas_search[port]" 
+                               min="1"
+                               max="65535"/>
+                        <p class="inline-hints">Optional: required for secure wireless.</p>
+
+
+                        <label for="whowas_search_timestamp" 
+                               class="label">
+                               Timestamp</label>
+                        <input id="whowas_search_timestamp" 
+                               type="text" 
+                               name="whowas_search[timestamp]" 
+                               required/>
+                        <p class="inline-hints">Currently only accepts ISO 8601 timestamps</p>
+                    </fieldset>
+
+                <input id = "whowas_search_send" 
+                       type="submit" 
+                       name="commit" 
+                       value="Search" 
+                       data-disable-with="Search" />
+            </form>            
+        </div>
+
+        <div class='whowas-search-results'>
+            <div id='whowas-search-spinner'>
+                <div class='spinner-container'>
+                    <div class='spinner'>
+                        <div class='bounce1'></div>
+                        <div class='bounce2'></div>
+                        <div class='bounce3'></div>
+                    </div>
+                </div>
+            </div>
+            <div class='loading-content' 
+                 id='whowas-search-results-content'>
+            </div>
+            <pre class='loading-content' 
+                 id='whowas-search-results-content-log'>
+            </pre>
+        </div>
+    </section>
+</section>
