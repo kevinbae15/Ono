@@ -25,20 +25,20 @@ const ESAPI = require( 'node-esapi' );
 
 
 //BigBro Config
-const big_bro_uri = process.env.BIG_BRO_URI;
+const big_bro_uri = [BIG_BRO_URI];
 const bluecat_config = {
-    id: process.env.BLUECAT_ID,
-    wsdl: process.env.BLUECAT_WSDL,
-    user: process.env.BLUECAT_USER,
-    password: process.env.BLUECAT_PASSWORD
+    id: [BLUECAT_ID],
+    wsdl: [BLUECAT_WSDL],
+    user: [BLUECAT_USER],
+    password: [BLUECAT_PASSWORD]
 }
 let cookie;
 BC_login();
 
 //Certificate Config
 const certOptions = {
-  key: fs.readFileSync(path.resolve("certs/server.key")),
-  cert: fs.readFileSync(path.resolve("certs/server.crt"))
+  key: fs.readFileSync(path.resolve([server_key])),
+  cert: fs.readFileSync(path.resolve([server_crt]))
 }
 
 //Server Config
